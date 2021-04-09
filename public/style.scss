@@ -1,3 +1,8 @@
+$loader-size: 100px;
+$loader-dot-size: ($loader-size / 5); //20
+$loader-height: $loader-dot-size; //20
+$loader-dot-color: #2196F3;
+
 *{
     margin: 0;
     padding: 0;
@@ -23,7 +28,7 @@
 	align-items: center;
 	align-content: center;
   margin-left: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   
 }
 
@@ -50,24 +55,29 @@
 
 .cardTitle{
   font-size: 25px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Merriweather', serif;
   font-weight: bold;
   display: block;/* or inline-block */
+  height: 97px;
+  text-overflow: ellipsis;
+  overflow: hidden;
   
 }
+
 .text-author{
   font-family: 'Squada One', cursive;
   margin-top: 6px;
 }
 .text-content{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Merriweather', serif;
   margin-top: 10px;
   display: block;/* or inline-block */
   text-overflow: ellipsis;
   word-wrap: break-word;
   overflow: hidden;
-  max-height: 6.3em;
+  max-height: 4.3em;
   line-height: 1.5em;
+  
 }
 .text-description{
   font-family: 'Rubik', sans-serif;
@@ -76,22 +86,70 @@
 .readMore{
     margin-left: 350px;
     margin-bottom: 18px;
-    margin-top: 20px;
-    
-   
+    margin-top: 20px;  
+}
+
+.loader{
+  //border: 1px solid blue;
+  width: $loader-size;
+  height: $loader-height;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  > div {
+    content: " ";
+    width: $loader-dot-size;
+    height: $loader-dot-size;
+    background: $loader-dot-color;
+    border-radius: 100%;
+    position: absolute;
+    animation: shift 2s linear infinite;
+    &:nth-of-type(1) { animation-delay: -.4s; }
+    &:nth-of-type(2) { animation-delay: -.8s; }
+    &:nth-of-type(3) { animation-delay: -1.2s; }
+    &:nth-of-type(4) { animation-delay: -1.6s; }
+  }
+}
+
+@keyframes shift {
+  0%{
+    left: -3*$loader-dot-size;
+    opacity: 0;
+    background-color: yellow;
+  }
+  10% { 
+    left: 0; 
+    opacity: 1;
+  }
+  90% { 
+    left: $loader-size; 
+    opacity: 1;
+  }
+  100%{
+    left: ($loader-size + 3*$loader-dot-size);
+    background-color: red;
+    opacity: 0;
+  }
+}
+
+.err-msg{
+  text-align: center;
+ 
 }
 
 
 
-
 @media screen and (max-width: 680px) {
-    .card {
-      margin-left: 200px;
-      margin-right: 200px;
-       flex-direction: none;
-      overflow: hidden , auto;
+  
+    .card-main{
+      display: block;
+     
     }
+  .card{
+   width: 10rem;
+  }
    .readMore{
-       display: none;
+       display:none ;
    }
   }

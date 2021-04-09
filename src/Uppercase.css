@@ -1,26 +1,22 @@
-  :root {
-    --bg:  #242526;
-    --bg-accent: #484a4d;
-    --text-color: #dadce1;
-    --nav-size: 60px;
-    --border: 1px solid #474a4d;
-    --border-radius: 8px;
-    --speed: 500ms; 
-  }
+
   
- 
+ .imgLogo{
+   width: 5%;
+   color: #2b2e4a;
+ }
   .timeNews{
-    background: url(./images/pablo-17.png);
     padding: 0 1rem;
-    height: 20vh;
     width: 100%;
-   margin-bottom: 20px;
+   margin-bottom: 30px;
+   display: flex;
   }
-  
+
   .text-time{
     font-size: 54px;
     margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+    font-family: 'Merriweather', serif;
+    color: #2b2e4a;
   }
 
   .text-body{
@@ -28,7 +24,14 @@
     width: 740px;
   }
 
- 
+  @media screen and (max-width: 680px) {
+   .imgLogo{
+     width: 10%;
+   }
+   .text-time{
+     font-size: 24px;
+   }
+  }
   
  
   

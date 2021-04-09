@@ -7,19 +7,12 @@ const Uppercase = () => {
         <>
         <>
         <main className='timeNews'>
-            <h1 className='text-time'>TimesNews</h1>
-            <div className='text-body'>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            </div>
+            <h1 className='text-time'>TimesNews </h1>
+            <img src='/images/logo.png' alt='' className='imgLogo' />
         </main>
          
         </>
-        
-            
+
         </>
     )
 }
