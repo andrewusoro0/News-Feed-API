@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardDeck } from "react-bootstrap";
+import { Card, CardDeck, Container, Row, Col} from "react-bootstrap";
 import Uppercase from "./Uppercase";
 import Footer from "./Footer";
 
@@ -36,16 +36,18 @@ class App extends Component {
   
   render() {
     return (
-      <div>
+      <>
         <Uppercase />
 
         {this.state.articles && this.state.articles.length ? (
           this.state.articles.map((item, index) => {
             return (
               <>
-                <main className="card-main col-md-4">
-                  <CardDeck className="card_Deck" col-md-6>
-                    <Card style={{ width: "28rem" }} className="card">
+                <Container className="card-main">
+                <Row  >
+                <Col>
+                  <CardDeck className="card_Deck" >
+                    <Card style={{ width: "28rem" , margin:'10px' }}  className="card">
                       <Card.Img
                         variant="top"
                         src={item.urlToImage}
@@ -67,7 +69,9 @@ class App extends Component {
                       </a>
                     </Card>
                   </CardDeck>
-                </main>
+                </Col>
+                </Row>
+                </Container>
               </>
             );
           })
@@ -77,7 +81,7 @@ class App extends Component {
           <p>Reconnecting to Wi-Fi.</p>
           <p>ERR_INTERNET_DISCONNECTED</p>
           <br />
-          <form action="<same page url>" method="GET">
+          <form action="" method="GET URL">
            <button>Reload</button>
             </form>
           </div>
@@ -94,7 +98,7 @@ class App extends Component {
         
         <Footer />
         </div>
-      </div>
+      </>
     );
   }
 }

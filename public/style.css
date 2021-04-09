@@ -17,7 +17,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-left: 20px;
 }
 
 .card-main {
@@ -194,7 +193,11 @@
     display: block;
   }
   .card {
-    width: 10rem;
+    -webkit-transform: translateX(-1.5%);
+            transform: translateX(-1.5%);
+  }
+  .card-main {
+    width: 120px;
   }
   .readMore {
     display: none;

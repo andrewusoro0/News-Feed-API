@@ -57,6 +57,7 @@ const Footer = () => {
           cols="50"
           maxlength="50"
           className="cardFooter"
+          placeholder="Write a comment..."
           required> 
           </textarea>
         </form>
@@ -66,9 +67,9 @@ const Footer = () => {
             onClick={(event) => uploadComment(event)}
             className="commentbtn"
           >
-            Success
+            comment
           </button>
-          <p className="readFooter"> Read and Comment on daily news </p>
+          <p className="readFooter">View more comments</p>
         </div>
         
       </article>
